@@ -17,14 +17,14 @@ services:
   postgresDB:
     image: postgres:14.1
     environment:
-      - POSTGRES_PASSWORD=petclinic
-      - POSTGRES_USER=petclinic
+      - POSTGRES_PASSWORD=abhadnan
+      - POSTGRES_USER=adnan
       - POSTGRES_DB=petclinic
     restart: always
     ports:
       - "5432:5432"
     volumes:
-      - postgres_db:/var/lib/postgresql/data
+      - postgresql1_db:/var/lib/postgresql/data
 
 volumes:
-  postgres_db:
+  postgresql1_db:

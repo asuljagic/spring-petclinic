@@ -8,6 +8,8 @@ services:
       dockerfile: Dockerfile
     environment:
       - POSTGRES_URL=jdbc:postgresql://postgresDB:5432/petclinic
+      - POSTGRES_USER=adnan
+      - POSTGRES_PASS=abhadnan
     restart: always
     ports:
       - 8080:8080

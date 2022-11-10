@@ -3,9 +3,7 @@ version: "3.7"
 services:
   petclinic:
     container_name: petclinic-app
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: localhost:5000/petclinic-app
     environment:
       - POSTGRES_URL=jdbc:postgresql://postgresDB:5432/petclinic
       - POSTGRES_USER=adnan
@@ -17,7 +15,7 @@ services:
       - postgresDB
 
   postgresDB:
-    image: postgres:14.1
+    image: localhost:5000/psql-petclinic
     environment:
       - POSTGRES_PASSWORD=abhadnan
       - POSTGRES_USER=adnan

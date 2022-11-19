@@ -20,7 +20,7 @@ pipeline {
 	}
         stage('Run the app') {
             steps {
-                sh 'docker-compose -f ./docker-compose.yml up -d petclinic-app'
+                sh 'docker-compose -f ./docker-compose.yml up -d petclinic'
             }
         }
     }

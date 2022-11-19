@@ -15,7 +15,8 @@ services:
       - postgresDB
 
   postgresDB:
-    image: 192.168.56.103:5000/psql-petclinic
+    container_name: postgres_container
+    image: postgres:14.1
     environment:
       - POSTGRES_PASSWORD=abhadnan
       - POSTGRES_USER=adnan

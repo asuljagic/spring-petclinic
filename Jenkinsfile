@@ -5,6 +5,7 @@ pipeline {
         stage('Build petclinic app') {
             steps {
                 sh 'pwd'
+                sh 'ls'
                 sh 'DOCKER_BUILDKIT=1 docker build -f /home/vagrant/spring-petclinic/Dockerfile -t spring-petclinic-app .'
                 sh 'docker tag spring-petclinic-app 192.168.56.103:5000/spring-petclinic-app'
             }
@@ -16,7 +17,7 @@ pipeline {
         }
         stage('Run postgres container') {
             steps {
-                sh 'docker-compose up postgres_container --build'
+                sh 'docker-compose up postgresDB --build'
 		}
 	}
         stage('Run the app') {

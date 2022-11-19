@@ -15,12 +15,12 @@ pipeline {
         }
         stage('Run postgres container') {
             steps {
-                sh 'docker-compose up postgresDB'
+                sh 'docker-compose up postgresDB -d'
 		}
 	}
         stage('Run the app') {
             steps {
-                sh 'docker-compose -f ./docker-compose up petclinic-app -d'
+                sh 'docker-compose -f ./docker-compose.yml up petclinic-app -d'
             }
         }
     }

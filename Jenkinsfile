@@ -2,11 +2,6 @@ pipeline {
     agent { label 'agent1' }
 
     stages {
-        stage('Pull changes from repository') {
-            steps {
-                sh 'git pull'
-            }
-        }
         stage('Build petclinic app') {
             steps {
                 sh 'DOCKER_BUILDKIT=1 docker build -f /home/vagrant/spring-petclinic/Dockerfile -t spring-petclinic-app .'

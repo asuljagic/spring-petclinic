@@ -1,5 +1,5 @@
 FROM jdk
-RUN mkdir -p /opt/app && apt-get install -y jq
+RUN mkdir -p /opt/app && apt-get update && apt-get install -y jq
 
 ADD ./tmp/spring-petclinic-2.7.3.jar /opt/app/spring-petclinic-2.7.3.jar
 ADD ./tmp/application.properties /opt/app/application.properties

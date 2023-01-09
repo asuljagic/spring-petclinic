@@ -18,6 +18,6 @@ sed -i "s|\${POSTGRES_USER:petclinic}|$db_user|" /opt/app/application.properties
 sed -i "s|\${POSTGRES_PASS:petclinic}|$db_pass|" /opt/app/application.properties
 
 #ensure java is running as PID 1
-exec java -Dspring.config.name=application -Dspring.config.location=file:/opt/app/application.properties -Dspring.profiles.active=postgres -jar /opt/app/spring-petclinic-2.7.3.jar
+exec java -Dspring.config.name=application -Dspring.config.location=file:/opt/app/application.properties -jar /opt/app/spring-petclinic-2.7.3.jar
 
 

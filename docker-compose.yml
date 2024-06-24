@@ -3,7 +3,7 @@ version: "3.7"
 services:
   petclinic:
     container_name: petclinic-app
-    image: 192.168.56.103:5000/petclinic-app
+    image: 192.168.56.103:5000/spring-petclinic-app
     environment:
       - POSTGRES_URL=jdbc:postgresql://postgresDB:5432/petclinic
       - POSTGRES_USER=adnan
@@ -15,7 +15,8 @@ services:
       - postgresDB
 
   postgresDB:
-    image: 192.168.56.103:5000/psql-petclinic
+    container_name: postgres_container
+    image: postgres:14.1
     environment:
       - POSTGRES_PASSWORD=abhadnan
       - POSTGRES_USER=adnan
